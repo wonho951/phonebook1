@@ -14,8 +14,8 @@
 		아래 항목을 기입하고 '등록' 버튼을 클릭하세요.
 	</p>
 	
-	<form action= "" method="">
-		이름(name):<input type ="text"> <br>
+	<form action= "./insert.jsp" method="get">
+		이름(name):<input type ="text" name="myname" value=""> <br>
 		핸드폰(hp):<input type ="text"> <br>
 		회사(company):<input type ="text"> <br>
 		
