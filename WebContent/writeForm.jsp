@@ -16,7 +16,7 @@
 	
 	<form action= "./insert.jsp" method="get">
 		이름(name):<input type ="text" name="name" value=""> <br>		<!--value값은 사용자가 웹상에서 입력한 값이 들어간다.  --> 
-		핸드폰(hp):<input type ="text" name="hp" value=""> <br>
+		핸드폰(hp):<input type ="text" name="hp" value=""> <br>	<!-- name은 그냥 속성명일 뿐임 위에서는 우연히 변수명이랑 같았을 뿐임. -->
 		회사(company):<input type ="text" name="company" value=""> <br>
 		
 		<button type = "submit">등록</button>
