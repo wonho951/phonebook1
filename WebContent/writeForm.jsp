@@ -15,9 +15,9 @@
 	</p>
 	
 	<form action= "./insert.jsp" method="get">
-		이름(name):<input type ="text" name="myname" value=""> <br>
-		핸드폰(hp):<input type ="text"> <br>
-		회사(company):<input type ="text"> <br>
+		이름(name):<input type ="text" name="name" value=""> <br>		<!--value값은 사용자가 웹상에서 입력한 값이 들어간다.  --> 
+		핸드폰(hp):<input type ="text" name="hp" value=""> <br>
+		회사(company):<input type ="text" name="company" value=""> <br>
 		
 		<button type = "submit">등록</button>
 	</form>
