@@ -14,16 +14,16 @@
 	//파라미터 꺼내기
 	int personId = Integer.parseInt(request.getParameter("id"));	//id는 string형이므로 integer사용
 	//여기까지 하고 테스트해봄
-	System.out.println(personId);
+	//System.out.println(personId);
 	
 	//phoneDao.delete(3) 사용해서 삭제
-	//int count = phoneDao.personDelete(personId);
-	
+	int count = phoneDao.personDelete(personId);
+	//System.out.println(count);
 	
 	
 
 	//리다이렉트로 요청(list.jsp)
-    
+    response.sendRedirect("./list.jsp");
     
     
     

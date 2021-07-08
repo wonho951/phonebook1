@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.javaex.vo.PersonVo;
+import com.javaex.vo.*;
 
 public class PhoneDao {
 
@@ -207,4 +208,92 @@ public class PhoneDao {
 		return count;
 	}
 
+	/*
+	// 한 사람만 가져오기 
+	public PersonVo getPerson(int personId) {
+		
+		PersonVo personVo = null;	//변수만 잡음
+		getConnection();
+
+		try {
+
+			// 3. SQL문 준비 / 바인딩 / 실행
+			String query = ""; // 쿼리문 문자열만들기, ? 주의
+			query += " select  person_id, ";
+			query += " 		   name, ";
+			query += "         hp, ";
+			query += "		   company ";
+			query += " from person ";
+			query += " where person_id = ? ";
+			// System.out.println(query);
+
+			pstmt = conn.prepareStatement(query); // 쿼리로 만들기
+
+			pstmt.setInt(1, personId); // ?(물음표) 중 1번째, 순서중요
+
+			rs = pstmt.executeQuery(); // 쿼리문 실행
+
+			
+			
+			// 4.결과처리
+			while(rs.next()) {
+				int pid = rs.getInt("person_Id");
+				String name = rs.getString("name");
+				String hp = rs.getString("hp");
+				String company = rs.getString("company");
+				
+				personVo = new PersonVo(pid, name, hp, company);
+			}
+		} catch (SQLException e) {
+			System.out.println("error:" + e);
+		}
+		close();
+		return personVo;
+	}
+	*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public PersonVo getPerson(int personId) {
+	      int count=0;
+	      getConnection();
+	      PersonVo personVo = null;
+	      try {
+	         String query = "";
+	         query += " select  person_id, ";
+	         query += "         name, ";
+	         query += "         hp, ";
+	         query += "         company ";
+	         query += " from  person ";
+	         query += " where  person_id = ? ";
+	         
+	         pstmt = conn.prepareStatement(query);
+	         pstmt.setInt(1, personId);
+	      
+	         rs = pstmt.executeQuery();
+	         
+	         
+	         //결과처리
+	         while(rs.next()) {
+	            int pid = rs.getInt("person_id");
+	            String name = rs.getString("name");
+	            String hp = rs.getString("hp");
+	            String company = rs.getString("company");
+	            
+	            personVo = new PersonVo(pid, name, hp, company);
+	         }
+	         
+	      } catch (SQLException e) {
+	         System.out.println("error:" + e);
+	      }
+	      
+	      return personVo;
+	   }
 }
