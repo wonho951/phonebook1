@@ -11,12 +11,10 @@
 
 
 	//파라미터에서 id값 추출
-	//int personId = Integer.parseInt(request.getParameter("id")); //둘다 같은 말임.
 	
-	 String id = request.getParameter("id");
-  	 int personId = Integer.parseInt(id);
-  	 System.out.println(personId);
-	
+	String id =request.getParameter("id");
+	int personId = Integer.parseInt(id);
+	System.out.println(personId);
 	
 	
 	//Dao에서 한사람(id)의 정보 가져오기.
@@ -39,10 +37,12 @@
 
 	<h1>전화번호수정</h1>
 	<p>수정화면 입니다. 아래 항목을 수정하고 "수정"버튼을 클릭하세욤</p>
-	<form action ="" method="">
+	<form action ="./update.jsp" method="get">
        이름(name): <input type="text" name="name" value="<%=personVo.getName() %>"> <br>
        핸드폰(hp): <input type="text" name="hp" value="<%=personVo.getHp() %>"> <br>
        회사(company): <input type="text" name="company" value="<%=personVo.getCompany() %>"> <br>
+       <input type = "text" name = "id" value = "<%= personVo.getPersonId() %>">	<!-- hidden으로 숨기는게 좋음. -->
+       
        <button type="submit">수정</button>
    </form>
 
