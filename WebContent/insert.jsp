@@ -5,6 +5,10 @@
 <%@ page import="com.javaex.dao.PhoneDao" %>
     
 <%
+
+	//PersonVo personVo = new PersonVo(name, hp, company); 어차피 쓸거 위에서 많이 선언함.
+
+
 	//파라미터에서 꺼내기
 	String name = request.getParameter("name");	// getParameter(String param) 파라미터 꺼내는거.
 												// 주어진 이름의 파라미터가 갖는 값을 리턴. 지정된 파라미터 없는 경우에는 null을 리턴.
