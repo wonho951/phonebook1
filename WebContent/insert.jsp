@@ -26,11 +26,16 @@
 	phoneDao.personInsert(personVo);
 	
 
-	//리스트 가져오기
-	List<PersonVo> personList= phoneDao.getPersonList();//리스트 import 하기. personVo는 메모리에 위에서 올렸기 때문에 새로 올릴 필요없음.
+// 	//리스트 가져오기	--> 리다이렉트로 대체
+
+// 	List<PersonVo> personList= phoneDao.getPersonList();//리스트 import 하기. personVo는 메모리에 위에서 올렸기 때문에 새로 올릴 필요없음.
 	
-	System.out.println(personList.toString());
+// 	System.out.println(personList.toString());
 	
+
+	//response.sendRedirect("./list.jsp");	//다시 list.jsp로 요청하는것.
+
+
 	
 %>    
 <!DOCTYPE html>
@@ -46,31 +51,31 @@
 	<p>입력한 정보 내역입니다.</p>
 	
 	
-	<% for(int i = 0; i <personList.size(); i++){
+		<%-- for(int i = 0; i <personList.size(); i++){ 
+		--%>	
+
+ 			<table border = "1">
+ 				<tr> 
+ 					<td>이름</td>
+<%--  					<td><%= //personList.get(i).getName() %></td>  --%>
+ 				</tr>	 
 			
-	%>
-		<table border = "1">
-			<tr>
-				<td>이름</td>
-				<td><%= personList.get(i).getName() %></td>
-			</tr>	
+ 				<tr>
+ 					<td>핸드폰</td> 
+<%--  					<td><%= //personList.get(i).getHp() %></td>  --%>
+ 				</tr>	
 			
-			<tr>
-				<td>핸드폰</td>
-				<td><%= personList.get(i).getHp() %></td>
-			</tr>	
-			
-			<tr>
-				<td>회사</td>
-				<td><%= personList.get(i).getCompany() %></td>
-			</tr>	
-		</table>
-		<br>
+ 				<tr> 
+ 					<!--<td>회사</td>--> 
+<%--  					<td><%= //personList.get(i).getCompany() %></td>  --%>
+ 				</tr>	 
+ 			</table> 
+ 			<br> 
 	
 	
-	<%
-		}
-	%>
+<%-- 		 <% --%>
+//  			//}
+<%--  		 %>  --%>
 	
 
 
